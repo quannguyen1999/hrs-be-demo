@@ -1,0 +1,21 @@
+spring:
+  # PostgreSQL
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    port: 5432
+    schema: hrs
+    hikari:
+      connectionTimeout: 20000
+      maximum-pool-size: 5
+    url: jdbc:postgresql://localhost:${spring.datasource.port}/postgres?currentSchema=${spring.datasource.schema}
+    username: postgres
+    password: postgres
+
+#Spring doc
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
